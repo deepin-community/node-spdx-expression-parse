@@ -1,27 +1,25 @@
 Source: node-spdx-expression-parse
+Section: javascript
+Priority: optional
 Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
 Uploaders: Pirate Praveen <praveen@debian.org>
-Section: javascript
-Testsuite: autopkgtest-pkg-nodejs
-Priority: optional
-Build-Depends:
- debhelper-compat (= 13)
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
  , node-assert <!nocheck>
  , node-spdx-exceptions (>= 2.1.0) <!nocheck>
  , node-spdx-license-ids (>= 3.0.0) <!nocheck>
- , dh-sequence-nodejs
-Standards-Version: 4.5.1
+Standards-Version: 4.6.0
 Vcs-Browser: https://salsa.debian.org/js-team/node-spdx-expression-parse
 Vcs-Git: https://salsa.debian.org/js-team/node-spdx-expression-parse.git
 Homepage: https://github.com/kemitchell/spdx-expression-parse.js
+Testsuite: autopkgtest-pkg-nodejs
 Rules-Requires-Root: no
 
 Package: node-spdx-expression-parse
 Architecture: all
-Depends:
- ${misc:Depends}
+Depends: ${misc:Depends}
  , node-spdx-exceptions (>= 2.0.1)
  , node-spdx-license-ids (>= 3.0.0)
- , nodejs
+Provides: ${nodejs:Provides}
 Description: parse SPDX license expressions
  Node.js is an event-based server-side JavaScript engine.
